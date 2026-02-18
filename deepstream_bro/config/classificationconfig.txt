@@ -1,0 +1,26 @@
+[property]
+gie-unique-id=1
+gpu-id=0
+process-mode=1
+network-type=1
+batch-size=1
+interval=0
+
+# Use ABSOLUTE paths first (avoid any path weirdness)
+model-engine-file=yolo26n-cls.onnx_b1_gpu0_fp32.engine
+#onnx-file=/home/autodrive/justperception/install/deepstream_bro/share/deepstream_bro/config/yolo26n-cls.onnx
+labelfile-path=/home/autodrive/justperception/install/deepstream_bro/share/deepstream_bro/config/labels_imagenet_1k.txt
+
+# If you already built an engine, enable this and comment onnx-file
+
+
+# Preprocess (Ultralytics style)
+net-scale-factor=0.003921568627
+model-color-format=0
+# offsets=0;0;0
+
+# If your classifier input is 224x224, set it explicitly:
+# infer-dims=3;224;224
+
+# Let the ROS probe read the raw output tensor
+output-tensor-meta=1

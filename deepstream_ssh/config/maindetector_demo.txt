@@ -1,0 +1,33 @@
+[property]
+gie-unique-id=1
+onnx-file=barebest.onnx
+model-engine-file=barebest.onnx_b1_gpu0_fp32.engine
+labelfile-path=labels.txt
+
+network-type=0
+process-mode=1
+batch-size=1
+infer-dims=3;640;640
+num-detected-classes=80
+
+# preprocessing (Ultralytics-style)
+net-scale-factor=0.003921568627
+offsets=0;0;0
+model-color-format=0
+# maintain-aspect-ratio=1
+# symmetric-padding=1
+
+# output tensor name (must match ONNX)
+output-blob-names=output0
+
+# clustering
+cluster-mode=2
+
+# custom parser
+custom-lib-path=libnvdsinfer_custom_impl_Yolo.so
+parse-bbox-func-name=NvDsInferParseYolo
+
+[class-attrs-all]
+pre-cluster-threshold=0.25
+nms-iou-threshold=0.45
+topk=200

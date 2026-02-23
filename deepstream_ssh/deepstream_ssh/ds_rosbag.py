@@ -71,7 +71,7 @@ class DeepStreamRosbagAnnotator(Node):
     # ROS params
     # -------------------------
     def _declare_params(self):
-        self.declare_parameter("image_topic", "/blackfly_2/image_raw")
+        self.declare_parameter("image_topic", "/blackfly_0/image_raw")
 
         # Set width/height to 0 for rosbag auto-detection from first frame.
         self.declare_parameter("width", 0)
